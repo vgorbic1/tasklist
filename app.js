@@ -59,6 +59,8 @@ function addTask(e) {
     const li = document.createElement('li');
     // Add class
     li.className = 'collection-item';
+    // Escape input
+    taskInput.value = taskInput.value.replace(/[.*+?^${}<>()|[\]\\]/g, '\\$&');
     // Create text node and append to li
     li.appendChild(document.createTextNode(taskInput.value));
     // Create new link element
